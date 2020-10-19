@@ -1,78 +1,31 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        study-nuxt
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
-  </div>
+  <article class="w-64 h-64 bg-white rounded m-8 border shadow-md">
+    <header class="h-16 pl-4 pt-3 pb-2">
+      <h3 class="">{{ review_title }}</h3>
+      <aside class="">
+        <span>★</span>
+        <span>★</span>
+      </aside>
+    </header>
+    <p class="overflow-x-auto h-48 px-4 py-2 border-t">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod assumenda
+      libero amet odit obcaecati sed facilis? Non voluptatem expedita molestiae
+      asperiores repudiandae laudantium blanditiis velit harum explicabo quidem?
+      Et, delectus?
+    </p>
+  </article>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      // items: [{ review_title: "カードタイトル" }],
+      review_title: "カードタイトル",
+    };
+  },
+};
 </script>
 
 <style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>
