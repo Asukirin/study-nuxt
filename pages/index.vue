@@ -1,78 +1,113 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        study-nuxt
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div class="flex flex-wrap">
+    <card
+      class="card"
+      v-for="review in reviews"
+      :title="review.title"
+      :message="review.message"
+      :value="review.value"
+      :key="review.id"
+    />
   </div>
 </template>
 
 <script>
-export default {}
+import Card from "~/components/Card";
+
+export default {
+  components: { Card },
+  data() {
+    return {
+      reviews: [
+        {
+          title: "カードタイトル1",
+          message:
+            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod assumenda libero amet odit obcaecati sed facilis? Non voluptatem expedita molestiae asperiores repudiandae laudantium blanditiis velit harum explicabo quidem? Et, delectus?",
+          value: 3,
+          id: 1,
+        },
+        {
+          title: "カードタイトル2",
+          message:
+            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod assumenda libero amet odit obcaecati sed facilis? Non voluptatem expedita molestiae asperiores repudiandae laudantium blanditiis velit harum explicabo quidem? Et, delectus?",
+          value: 1,
+          id: 2,
+        },
+        {
+          title: "カードタイトル3",
+          message:
+            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod assumenda libero amet odit obcaecati sed facilis? Non voluptatem expedita molestiae asperiores repudiandae laudantium blanditiis velit harum explicabo quidem? Et, delectus?",
+          value: 4,
+          id: 3,
+        },
+        {
+          title: "カードタイトル4",
+          message:
+            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod assumenda libero amet odit obcaecati sed facilis? Non voluptatem expedita molestiae asperiores repudiandae laudantium blanditiis velit harum explicabo quidem? Et, delectus?",
+          value: 2,
+          id: 4,
+        },
+        {
+          title: "カードタイトル5",
+          message:
+            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod assumenda libero amet odit obcaecati sed facilis? Non voluptatem expedita molestiae asperiores repudiandae laudantium blanditiis velit harum explicabo quidem? Et, delectus?",
+          value: 5,
+          id: 5,
+        },
+        {
+          title: "カードタイトル6",
+          message:
+            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod assumenda libero amet odit obcaecati sed facilis? Non voluptatem expedita molestiae asperiores repudiandae laudantium blanditiis velit harum explicabo quidem? Et, delectus?",
+          value: 4,
+          id: 6,
+        },
+        {
+          title: "カードタイトル7",
+          message:
+            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod assumenda libero amet odit obcaecati sed facilis? Non voluptatem expedita molestiae asperiores repudiandae laudantium blanditiis velit harum explicabo quidem? Et, delectus?",
+          value: 2,
+          id: 7,
+        },
+        {
+          title: "カードタイトル8",
+          message:
+            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod assumenda libero amet odit obcaecati sed facilis? Non voluptatem expedita molestiae asperiores repudiandae laudantium blanditiis velit harum explicabo quidem? Et, delectus?",
+          value: 1,
+          id: 8,
+        },
+        {
+          title: "カードタイトル9",
+          message:
+            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod assumenda libero amet odit obcaecati sed facilis? Non voluptatem expedita molestiae asperiores repudiandae laudantium blanditiis velit harum explicabo quidem? Et, delectus?",
+          value: 3,
+          id: 9,
+        },
+        {
+          title: "カードタイトル10",
+          message:
+            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod assumenda libero amet odit obcaecati sed facilis? Non voluptatem expedita molestiae asperiores repudiandae laudantium blanditiis velit harum explicabo quidem? Et, delectus?",
+          value: 3,
+          id: 10,
+        },
+        {
+          title: "カードタイトル11",
+          message:
+            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod assumenda libero amet odit obcaecati sed facilis? Non voluptatem expedita molestiae asperiores repudiandae laudantium blanditiis velit harum explicabo quidem? Et, delectus?",
+          value: 1,
+          id: 11,
+        },
+        {
+          title: "カードタイトル12",
+          message:
+            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod assumenda libero amet odit obcaecati sed facilis? Non voluptatem expedita molestiae asperiores repudiandae laudantium blanditiis velit harum explicabo quidem? Et, delectus?",
+          value: 4,
+          id: 12,
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>
