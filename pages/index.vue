@@ -17,7 +17,7 @@
 
 <script>
 import Card from "~/components/Card.vue";
-import hideButton from "~/components/hide_button.vue";
+import hideButton from "~/components/HideButton.vue";
 
 export default {
   components: { Card, hideButton },
