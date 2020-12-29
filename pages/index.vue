@@ -1,23 +1,29 @@
 <template>
-  <div class="flex flex-wrap">
-    <card
-      class="card"
-      v-for="review in reviews"
-      :title="review.title"
-      :message="review.message"
-      :value="review.value"
-      :key="review.id"
-    />
+  <div>
+    <hideButton @click="hideStar = !hideStar" />
+    <div class="flex flex-wrap">
+      <card
+        class="card"
+        v-bind:class="{ 'hide-star': hideStar }"
+        v-for="review in reviews"
+        :title="review.title"
+        :message="review.message"
+        :value="review.value"
+        :key="review.id"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-import Card from "~/components/Card";
+import Card from "~/components/Card.vue";
+import hideButton from "~/components/HideButton.vue";
 
 export default {
-  components: { Card },
+  components: { Card, hideButton },
   data() {
     return {
+      hideStar: false,
       reviews: [
         {
           title: "カードタイトル1",
@@ -109,5 +115,5 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 </style>
